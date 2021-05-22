@@ -1,9 +1,9 @@
 # BONUS: React Forms Abstraction
 
-## Objectives
+## Learning Goals
 
-1. Make our form logic more reusable by creating a dynamic `onChange` event
-   handler
+- Make our form logic more reusable by creating a dynamic `onChange` event
+  handler
 
 ## Code Along
 
@@ -48,7 +48,7 @@ repetitive pretty fast. For every new input field, we'd need to add:
 - a new state variable by calling `useState()` to hold the value of that input
 - a new `handleChange` function to update that piece of state
 
-As a first refactor, let's use `useState` just once, and make an object
+As a first refactor, let's use `useState` just once, and make an **object**
 representing all of our input fields:
 
 ```jsx
@@ -103,13 +103,17 @@ setFormData({
 ```
 
 Now, we just have one object in state to update whenever a the input field
-changes. Our change handlers are still a bit verbose, however. Since each one is
-changing a different value in our state, we've got them separated here. You can
-imagine that once we've got a more complicated form, this route may result in a
-very cluttered component. Instead of separate methods, we could actually
-condense this down into one abstracted component. Since `event` is being passed
-in as the argument, we have access to some of the `event.target` attributes that
-may be present.
+changes.
+
+Our change handlers are still a bit verbose, however. Since each one is changing
+a different value in our state, we've got them separated here. You can imagine
+that once we've got a more complicated form, this route may result in a very
+cluttered component.
+
+Instead of writing separate function for each input field, we could actually
+condense this down into one more reusable function. Since `event` is being
+passed in as the argument, we have access to some of the `event.target`
+attributes that may be present.
 
 If we give our inputs `name` attributes, we can access them as `event.target.name`:
 
@@ -144,7 +148,7 @@ function handleChange(event) {
 }
 ```
 
-If we connect this method to both of our `input`s, they will both correctly
+If we connect this function to both of our `input`s, they will both correctly
 update state. Why? Because for the first `input`, `event.target.name` is set to
 `firstName`, while in the second `input`, it is set to `lastName`. Each
 `input`'s `name` attribute will change which part of state is actually updated!
@@ -222,10 +226,16 @@ some additional logic to handle things like number fields (using `parseInt` or
 `parseFloat`) and other data types to ensure your form state is always in sync
 with your components.
 
-If you're using a lot of forms in your application, it's worth checking out some
-nice React libraries like [react hook form](https://react-hook-form.com/) to
-handle some of this abstraction as well as adding custom client-side validation
-to your forms.
+## Conclusion
+
+Working with controlled forms in React involves writing a lot of boilerplate
+code. We can abstract away some of that boilerplate by making our change handling
+logic more abstract.
+
+**Note**: Working with complex forms can get quite challenging! If you're using
+a lot of forms in your application, it's worth checking out some nice React
+libraries like [react hook form](https://react-hook-form.com/) to handle some of
+this abstraction, as well as adding custom client-side validation to your forms.
 
 ## Resources
 
