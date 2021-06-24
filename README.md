@@ -102,7 +102,7 @@ setFormData({
 });
 ```
 
-Now, we just have one object in state to update whenever a the input field
+Now, we just have one object in state to update whenever an input field
 changes.
 
 Our change handlers are still a bit verbose, however. Since each one is changing
