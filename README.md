@@ -90,7 +90,7 @@ function Form() {
 ```
 
 Since our initial state is an _object_, we have to copy all the key/value pairs
-from the current version of that object into our new state &mdash; that's what
+from the current version of that object into our new state — that's what
 this spread operator here is doing:
 
 ```js
