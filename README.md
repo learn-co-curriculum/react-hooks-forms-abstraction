@@ -117,7 +117,7 @@ attributes that may be present.
 
 If we give our inputs `name` attributes, we can access them as `event.target.name`:
 
-```js
+```jsx
 <input
   type="text"
   name="firstName"
