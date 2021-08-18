@@ -12,8 +12,8 @@ to run `npm install && npm start` to see the code in the browser.
 
 ## Form State
 
-Let's talk about the `onChange` event we've got set up now in initial version of
-our `Form` component. If we look at the original code:
+Let's talk about the `onChange` event we had set up in the initial
+version of our `Form` component. If we look at the original code:
 
 ```jsx
 import React, { useState } from "react";
@@ -49,7 +49,8 @@ repetitive pretty fast. For every new input field, we'd need to add:
 - a new `handleChange` function to update that piece of state
 
 As a first refactor, let's use `useState` just once, and make an **object**
-representing all of our input fields:
+representing all of our input fields. We will also need to update our `onChange`
+handlers and the variable names in our JSX accordingly:
 
 ```jsx
 function Form() {
@@ -89,9 +90,10 @@ function Form() {
 }
 ```
 
-Since our initial state is an _object_, we have to copy all the key/value pairs
-from the current version of that object into our new state — that's what
-this spread operator here is doing:
+Since our initial state is an _object_, in order to update state in our
+`onChange` handlers, we have to copy all the key/value pairs from the current
+version of that object into our new state — that's what the spread operator here
+is doing:
 
 ```js
 setFormData({
@@ -107,10 +109,10 @@ changes.
 
 Our change handlers are still a bit verbose, however. Since each one is changing
 a different value in our state, we've got them separated here. You can imagine
-that once we've got a more complicated form, this route may result in a very
+that once we've got a more complicated form, this approach may result in a very
 cluttered component.
 
-Instead of writing separate function for each input field, we could actually
+Instead of writing separate functions for each input field, we could actually
 condense this down into one more reusable function. Since `event` is being
 passed in as the argument, we have access to some of the `event.target`
 attributes that may be present.
@@ -132,7 +134,7 @@ If we give our inputs `name` attributes, we can access them as `event.target.nam
 />
 ```
 
-If we make sure the `name` attributes of our `<input>` fields match keys in our
+As long as the `name` attributes of our `<input>` fields match the keys in our
 state, we can write a generic `handleChange` function like so:
 
 ```js
@@ -148,20 +150,21 @@ function handleChange(event) {
 }
 ```
 
-If we connect this function to both of our `input`s, they will both correctly
-update state. Why? Because for the first `input`, `event.target.name` is set to
-`firstName`, while in the second `input`, it is set to `lastName`. Each
-`input`'s `name` attribute will change which part of state is actually updated!
+Then, if we connect this new function to both of our `input`s, they will both
+correctly update state. Why? Because for the first `input`, `event.target.name`
+is set to `firstName`, while in the second `input`, it is set to `lastName`.
+Each `input`'s `name` attribute will change which part of state is actually
+updated!
 
 Now, if we want to add a new input field to the form, we just need to add two things:
 
-- a new key in our `formData` state, and
+- a new key/value pair in our `formData` state, and
 - a new `<input>` field where the `name` attribute matches our new key
 
 We can take it one step further, and also handle `checkbox` inputs in our
 `handleChange` input. Since checkboxes have a `checked` attribute instead of the
-`value` attribute, here's what we'd need to check what `type` our input is in
-order to get the correct value in state.
+`value` attribute, we'd need to check what `type` our input is in order to get
+the correct value in state.
 
 Here's what the final version of our `Form` component looks like:
 
@@ -235,7 +238,8 @@ logic more abstract.
 **Note**: Working with complex forms can get quite challenging! If you're using
 a lot of forms in your application, it's worth checking out some nice React
 libraries like [react hook form](https://react-hook-form.com/) to handle some of
-this abstraction, as well as adding custom client-side validation to your forms.
+this abstraction. You can also use them to add custom client-side validation to
+your forms.
 
 ## Resources
 
