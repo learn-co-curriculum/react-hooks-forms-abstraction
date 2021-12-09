@@ -19,8 +19,8 @@ version of our `Form` component. If we look at the original code:
 import React, { useState } from "react";
 
 function Form() {
-  const [firstName, setFirstName] = useState("John");
-  const [lastName, setLastName] = useState("Henry");
+  const [firstName, setFirstName] = useState("Sylvia");
+  const [lastName, setLastName] = useState("Woods");
 
   function handleFirstNameChange(event) {
     setFirstName(event.target.value);
@@ -173,8 +173,8 @@ import React, { useState } from "react";
 
 function Form() {
   const [formData, setFormData] = useState({
-    firstName: "John",
-    lastName: "Henry",
+    firstName: "Sylvia",
+    lastName: "Woods",
     admin: false,
   });
 
