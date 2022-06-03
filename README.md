@@ -139,7 +139,7 @@ state, we can write a generic `handleChange` function like so:
 
 ```js
 function handleChange(event) {
-  // name is the KEY in of the formData object we're trying to update
+  // name is the KEY in the formData object we're trying to update
   const name = event.target.name;
   const value = event.target.value;
 
@@ -222,6 +222,8 @@ function Form() {
     </form>
   );
 }
+
+export default Form;
 ```
 
 Depending on what input elements you're working with, you might also have to add
