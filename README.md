@@ -222,6 +222,8 @@ function Form() {
     </form>
   );
 }
+
+export default Form;
 ```
 
 Depending on what input elements you're working with, you might also have to add
