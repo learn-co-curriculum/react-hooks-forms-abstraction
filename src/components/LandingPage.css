@@ -1,0 +1,277 @@
+/* LandingPage.css */
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styles */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Header styles */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .header img {
+    height: 40px;
+  }
+  
+  .header nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+  }
+  
+  /* Hero styles */
+  .hero {
+    text-align: center;
+    padding: 80px 0;
+    background-color: #00bcd4;
+    color: #fff;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+  }
+  
+  .hero button {
+    background-color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  /* Features styles */
+  .features {
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .feature {
+    margin-bottom: 40px;
+  }
+  
+  .feature img {
+    height: 100px;
+  }
+  
+  .feature h3 {
+    font-size: 1.5rem;
+    margin: 20px 0;
+  }
+  
+  .feature p {
+    font-size: 1.1rem;
+  }
+
+  /* Pricing options */
+  .pricing-options {
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .pricing-options h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .options {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .option {
+    flex: 1;
+    max-width: 200px;
+    margin: 0 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .option h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .option p {
+    font-size: 1.2rem;
+  }
+
+
+
+
+
+
+  
+  /* Testimonials styles */
+  .testimonials {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #f5f5f5;
+    display: flex;
+  }
+  
+  .testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .testimonial {
+    margin-bottom: 40px;
+  }
+  
+  .testimonial img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .testimonial blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 20px 0;
+  }
+  
+  .testimonial p {
+    font-size: 1.1rem;
+  }
+  
+  /* Pricing styles */
+  .pricing {
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .pricing h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .plan {
+    margin-bottom: 40px;
+  }
+  
+  .plan h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .plan p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .plan ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.1rem;
+  }
+  
+  .plan ul li {
+    margin-bottom: 5px;
+  }
+  
+  /* Contact styles */
+  .contact {
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .contact p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+  }
+  
+  .contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact form input,
+  .contact form textarea,
+  .contact form button {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .contact form textarea {
+    height: 120px;
+  }
+  
+  .contact form button {
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Footer styles */
+  .footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .footer p {
+    margin-bottom: 10px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  .social-icons img {
+    width: 30px;
+    height: 30px;
+  }
+  
